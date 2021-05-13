@@ -22,7 +22,7 @@ const Login = () => {
                 confirmButtonColor: '#f39c12',
             });
         }else{
-            axios.get(`http://192.168.1.8:3001/login/${usuario}&${clave}`)
+            axios.get(`http://192.168.1.12:3001/login/${usuario}&${clave}`)
             .then((response) => {
                 console.log(response.data)
                 if(response.data[0]){
@@ -62,7 +62,7 @@ const Login = () => {
                 confirmButtonColor: '#f39c12',
             });
         }else{
-            axios.post('http://192.168.1.8:3001/login',{
+            axios.post('http://192.168.1.12:3001/login',{
                 usuario: usuario,
                 clave: clave,
             }).then((response) => {
@@ -95,7 +95,7 @@ const Login = () => {
     }
 
     useEffect(() => {
-        axios.get("http://192.168.1.8:3001/login").then((response) => {
+        axios.get("http://192.168.1.12:3001/login").then((response) => {
             console.log(response)
         })
     }, [])
